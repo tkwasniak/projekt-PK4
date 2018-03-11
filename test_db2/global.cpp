@@ -1,55 +1,55 @@
-#include "db_connection.h"
-#include <QVariant>
-#include <QtSql/QSqlRecord>
+#include "global.h"
+#include <iostream>
+#include <windows.h>
 
-bool LogIntoDb(string& username, string& password,bool& user_type){
-
-    QSqlDatabase db;
-    db = QSqlDatabase::addDatabase("QPSQL");
-    db.setHostName("localhost");
-    db.setUserName("postgres");
-    db.setPassword("root");
-    db.setDatabaseName("bankdb");
-    QSqlQuery query(db);
-        if(db.open())
-        {
-           cout << "Database opened successfully.\n";
-           QString q_user = QString::fromStdString(username);
-           QString q_pass = QString::fromStdString(password);
-
-           q_user = q_pass = "admin";
-           if(query.exec("SELECT id FROM users WHERE username = '"+q_user+"'"
-                          " AND password = '"+q_pass+"'")){
-               if(!query.size()) {
-                   cout << "No such user exists\n";
-                   return false;
-               }
-               else{
-                    query.first(); // retrieves the first record in the result
-                    int X = query.value(0).toInt();
-                    user_type =  query.value(0).toInt() == 1? 1:0;
-                    cout << "User's id: " << X << endl;
-                    return true;
+const int admin_id = 1;
+const string  admin_username = "admin";
+const string admin_password = "admin";
 
 
-               }
-           }
-           else cout << "QUERY exec failed\n";
-
-          QString wynik = query.lastQuery();
-         qDebug("%s", qUtf8Printable(wynik));
-        }
-        else
-        {
-            cout << "Database connection failed!\n";
-            return false;
-        }
-}
 
 unsigned int read_int(){
 
 
 }
+
+string GetPassword(const string& prompt){
+    string result;
+    DWORD mode, count;
+    HANDLE ih = GetStdHandle(STD_INPUT_HANDLE);
+    HANDLE oh = GetStdHandle(STD_OUTPUT_HANDLE);
+    if (!GetConsoleMode( ih, &mode ))
+       throw runtime_error(
+         "getpassword: You must be connected to a console to use this program.\n"
+         );
+     SetConsoleMode( ih, mode & ~(ENABLE_ECHO_INPUT | ENABLE_LINE_INPUT) );
+     // Get the password string
+       WriteConsoleA( oh, prompt.c_str(), prompt.length(), &count, NULL );
+       char c;
+       while (ReadConsoleA( ih, &c, 1, &count, NULL) && (c != '\r') && (c != '\n'))
+         {
+         if (c == '\b')
+           {
+           if (result.length())
+             {
+             WriteConsoleA( oh, "\b \b", 3, &count, NULL );
+             result.erase( result.end() -1 );
+             }
+           }
+         else
+           {
+           WriteConsoleA( oh, "*", 1, &count, NULL );
+           result.push_back( c );
+           }
+         }
+
+       // Restore the console mode
+       SetConsoleMode( ih, mode );
+
+       return result;
+
+}
+
 
 unsigned int DisplayMainMenu(){
     int menu_index;

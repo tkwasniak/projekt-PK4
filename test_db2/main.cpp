@@ -2,9 +2,9 @@
 #include <QProcess>
 #include <QtDebug>
 #include <stdlib.h>
-
 #include <iostream>
 #include "admin.h"
+#include "db_connector.h"
 #include <typeinfo>
 using namespace std;
 
@@ -12,29 +12,21 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    QSqlDatabase db;
 
-    db = QSqlDatabase::addDatabase("QPSQL");
-    db.setHostName("localhost");
-    db.setUserName("postgres");
-    db.setPassword("root");
-    db.setDatabaseName("bankdb");
+     DB_connector* connector = new DB_connector();
+     if(connector->open()){
+     cout << "Connection established\n";
+     User* USER;
+     do
+     {
+         USER = LogIn(connector);
+         if(!USER) cout << "Incorrect username or password, please try again.\n";
 
-
-
-   //string username, password;
-
-//   cout << "Username: ";
-//   cin >> username;
-//   cout << "\nPassword: ";
-//   cin >> password;
-
-
-     //User* user = LogIn(username, password, db);
-     User* user = LogIn(db);
-     if(user) cout << "OK";
-
-       unsigned int menu_index;
+     }while(!USER);
+//-------------------------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!---------------------
+      USER->CreateAccount(connector);
+//-------------------------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!---------------------
+     // unsigned int menu_index;
 
 //       do
 //       {
@@ -94,7 +86,7 @@ int main(int argc, char *argv[])
 //              break;
 //          }
 //          case 5:{
-//              if(typeid(*user) != typeid(Admin)){ //TYPEID
+//              if(typeid(*USER) != typeid(Admin)){ //TYPEID
 //              cout << "This option requires administrator account.\n";
 //              break; }
 //              else {
@@ -103,8 +95,8 @@ int main(int argc, char *argv[])
 //              {
 //                  menu_index = DisplayAdminMenu();
 //                  switch(menu_index){
-//                  case 1:{
-
+//                  case 1:{ // CREATE AN ACCOUNT
+//                      USER->CreateAccount(connector);
 
 //                      break;
 //                  }
@@ -148,7 +140,7 @@ int main(int argc, char *argv[])
 //        }
 //       }
 //       while(menu_index != 6);
-
+ } else cout << "Connection failed.\n";
 
     return a.exec();
 }
