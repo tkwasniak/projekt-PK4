@@ -2,47 +2,50 @@
 
 #include <QDebug>
 New_user::New_user()
-    :balance(0)
 {
-// wygenerować losowy id i account_number
     srand(time(NULL));
+    user_data_map.insert(make_pair("balance", QString::number(0)));
+
 
 }
 
 void New_user::AssignCredentials(){
- //TUTAJ JESTEM OBECNIE
+    string tmp;
+    cin.clear();
+    cin.ignore(INT_MAX, '\n');
+    cout << "Name:\n";
+    getline(cin, tmp);
+    user_data_map.insert(make_pair("name", QString::fromStdString(tmp)));
+    cout << "Address:\n";
+    getline(cin, tmp);
+    user_data_map.insert(make_pair("address", QString::fromStdString(tmp)));
+    cout << "Mobile number:\n";
+    getline(cin, tmp);
+    user_data_map.insert(make_pair("mobile_num", QString::fromStdString(tmp)));
+    cout << "Username:\n";
+    getline(cin, tmp);
+    user_data_map.insert(make_pair("username", QString::fromStdString(tmp)));
+    tmp = GetPassword("Password:\n") ;
+    user_data_map.insert(make_pair("password", QString::fromStdString(tmp)));
 
-};
+
+
+}
 void New_user::GenerateIdAndAccountNo(DB_connector* connector){
 
     default_random_engine engine(time(NULL));
-    uniform_int_distribution<int> id_generator (1, 99);
     uniform_int_distribution<int> account_num_generator (10000, 99999);
+    user_data_map.insert(make_pair("account_num",QString::number(account_num_generator(engine))));
+    QString result = connector->SingleSelectQuery("SELECT MAX(id) from users");
+    int id= result.toInt();
+    user_data_map.insert(make_pair("id",QString::number(++id)));
 
-    do
-    {
-       id = id_generator(engine);
-    }
-    while(!IsAvailable(id, "id", connector));
+  }
 
-    qDebug() << "Wylosowane id: " << id;
 
-    do
-    {
-       account_number = account_num_generator(engine);
+map<string, QString>& New_user::ReturnNewUserData(){
+    return this->user_data_map;
 
-    }
-    while(!IsAvailable(account_number, "account_number", connector));
-    qDebug() << "Wylosowane account num: " << account_number << endl;
 }
 
 
-
-
-bool New_user::IsAvailable(unsigned int num, QString str, DB_connector* connector){
-
-    QString query = QString("SELECT %1 FROM users WHERE %1 =%2").arg(str).arg(num);
-    QString result;
-    result = connector->SingleSelectQuery(query);
-    return result.isEmpty()? true : false;
-}

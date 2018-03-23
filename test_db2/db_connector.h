@@ -5,7 +5,6 @@
 #include <QtSql/QSqlQuery>
 #include <QVariant>
 #include <QtSql/QSqlRecord>
-
 class DB_connector
 {
     QSqlDatabase db;
@@ -15,6 +14,8 @@ public:
     bool open();
     bool close();
     QString SingleSelectQuery(const QString& _query);
+    bool QueryExecute(const QString& _query);
+
 };
 
 #endif // DB_CONNECTOR_H

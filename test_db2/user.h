@@ -1,21 +1,22 @@
 #ifndef USER_H
 #define USER_H
-#include <string>
 #include "global.h"
 #include <iostream>
-using namespace std;
-
+#include "db_connector.h"
 class User
 {
-private:
-    string username, password;
+protected:
+    int id;
+    QString query;
 public:
     User();
-    User(const string& _username, const string& _password);
+    User(int _id);
     virtual ~User();
-    virtual void CreateAccount(DB_connector* connector){
+    virtual bool CreateAccount(DB_connector* connector){
         cout << "User function";
     }
+    virtual int DeleteAccount(DB_connector* connector, int delete_id){}
+
 
 //   virtual void ExportMyHistory();
 //   virtual void TransferMoney(int _account_num);

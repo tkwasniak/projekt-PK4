@@ -215,7 +215,8 @@ debug/main.o: ../../PROJEKT/test_db2/main.cpp ../../../Qt/5.10.1/mingw53_32/incl
 		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlquery.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/QVariant \
 		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlRecord \
-		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlrecord.h
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlrecord.h \
+		../../PROJEKT/test_db2/new_user.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\..\PROJEKT\test_db2\main.cpp
 
 debug/user.o: ../../PROJEKT/test_db2/user.cpp ../../PROJEKT/test_db2/user.h \
@@ -241,7 +242,61 @@ debug/user.o: ../../PROJEKT/test_db2/user.cpp ../../PROJEKT/test_db2/user.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qglobalstatic.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmutex.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qnumeric.h \
-		../../../Qt/5.10.1/mingw53_32/include/QtCore/qversiontagging.h
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qversiontagging.h \
+		../../PROJEKT/test_db2/db_connector.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QString \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstring.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qchar.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qbytearray.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qrefcount.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qnamespace.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qarraydata.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringview.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlDatabase \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlQuery \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlquery.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QVariant \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvariant.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qlist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qiterator.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qpair.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringlist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qregexp.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmetatype.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmap.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qdebug.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qhash.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qtextstream.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qiodevice.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobject.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobject_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qlocale.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qshareddata.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvector.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qpoint.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qset.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlRecord \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlrecord.h \
+		../../PROJEKT/test_db2/admin.h \
+		../../PROJEKT/test_db2/new_user.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\user.o ..\..\PROJEKT\test_db2\user.cpp
 
 debug/admin.o: ../../PROJEKT/test_db2/admin.cpp ../../PROJEKT/test_db2/admin.h \
@@ -268,7 +323,61 @@ debug/admin.o: ../../PROJEKT/test_db2/admin.cpp ../../PROJEKT/test_db2/admin.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qglobalstatic.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmutex.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qnumeric.h \
-		../../../Qt/5.10.1/mingw53_32/include/QtCore/qversiontagging.h
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qversiontagging.h \
+		../../PROJEKT/test_db2/db_connector.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QString \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstring.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qchar.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qbytearray.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qrefcount.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qnamespace.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qarraydata.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringview.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlDatabase \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlQuery \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlquery.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QVariant \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvariant.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qlist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qiterator.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qpair.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringlist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qregexp.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmetatype.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmap.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qdebug.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qhash.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qtextstream.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qiodevice.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobject.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobject_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qlocale.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qshareddata.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvector.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qpoint.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qset.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlRecord \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlrecord.h \
+		../../PROJEKT/test_db2/new_user.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QtDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\admin.o ..\..\PROJEKT\test_db2\admin.cpp
 
 debug/new_user.o: ../../PROJEKT/test_db2/new_user.cpp ../../PROJEKT/test_db2/new_user.h \
@@ -294,7 +403,62 @@ debug/new_user.o: ../../PROJEKT/test_db2/new_user.cpp ../../PROJEKT/test_db2/new
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qglobalstatic.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmutex.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qnumeric.h \
-		../../../Qt/5.10.1/mingw53_32/include/QtCore/qversiontagging.h
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qversiontagging.h \
+		../../PROJEKT/test_db2/db_connector.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QString \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstring.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qchar.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qbytearray.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qrefcount.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qnamespace.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qarraydata.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringview.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlDatabase \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlQuery \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlquery.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QVariant \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvariant.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qlist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qiterator.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qpair.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringlist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qregexp.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmetatype.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmap.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qdebug.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qhash.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qtextstream.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qiodevice.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobject.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobject_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qlocale.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qshareddata.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvector.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qpoint.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qset.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlRecord \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlrecord.h \
+		../../PROJEKT/test_db2/admin.h \
+		../../PROJEKT/test_db2/user.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\new_user.o ..\..\PROJEKT\test_db2\new_user.cpp
 
 debug/global.o: ../../PROJEKT/test_db2/global.cpp ../../PROJEKT/test_db2/global.h \
@@ -319,7 +483,62 @@ debug/global.o: ../../PROJEKT/test_db2/global.cpp ../../PROJEKT/test_db2/global.
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qglobalstatic.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmutex.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qnumeric.h \
-		../../../Qt/5.10.1/mingw53_32/include/QtCore/qversiontagging.h
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qversiontagging.h \
+		../../PROJEKT/test_db2/db_connector.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QString \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstring.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qchar.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qbytearray.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qrefcount.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qnamespace.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qarraydata.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringview.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlDatabase \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qtsqlglobal.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlQuery \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlquery.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QVariant \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvariant.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qlist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qiterator.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qpair.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringlist.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qregexp.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmetatype.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qmap.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qdebug.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qhash.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qtextstream.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qiodevice.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobject.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qobject_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qlocale.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qshareddata.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qvector.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qpoint.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qset.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlRecord \
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlrecord.h \
+		../../PROJEKT/test_db2/admin.h \
+		../../PROJEKT/test_db2/user.h \
+		../../PROJEKT/test_db2/new_user.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\global.o ..\..\PROJEKT\test_db2\global.cpp
 
 debug/db_connector.o: ../../PROJEKT/test_db2/db_connector.cpp ../../PROJEKT/test_db2/db_connector.h \
@@ -394,7 +613,13 @@ debug/db_connector.o: ../../PROJEKT/test_db2/db_connector.cpp ../../PROJEKT/test
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qsharedpointer.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtCore/qsharedpointer_impl.h \
 		../../../Qt/5.10.1/mingw53_32/include/QtSql/QSqlRecord \
-		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlrecord.h
+		../../../Qt/5.10.1/mingw53_32/include/QtSql/qsqlrecord.h \
+		../../PROJEKT/test_db2/admin.h \
+		../../PROJEKT/test_db2/user.h \
+		../../PROJEKT/test_db2/global.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QtGlobal \
+		../../PROJEKT/test_db2/new_user.h \
+		../../../Qt/5.10.1/mingw53_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\db_connector.o ..\..\PROJEKT\test_db2\db_connector.cpp
 
 ####### Install

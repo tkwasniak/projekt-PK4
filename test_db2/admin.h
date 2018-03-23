@@ -4,17 +4,16 @@
 #include "new_user.h"
 class Admin: public User
 {
-public:
-    Admin(const string& _username, const string& password);
 
-     void CreateAccount(DB_connector* connector);
-//    void DeleteAccount();
+public:
+    Admin(int _id);
+
+   bool CreateAccount(DB_connector* connector);
+   int DeleteAccount(DB_connector* connector, int delete_id);
 
 
 };
 
-
-//User* LogIn(string& username, string& password, QSqlDatabase& db);
 User* LogIn(DB_connector* connector);
 
 #endif // ADMIN_H

@@ -2,16 +2,12 @@
 #include <iostream>
 #include <windows.h>
 
-const int admin_id = 1;
-const string  admin_username = "admin";
-const string admin_password = "admin";
 
 
-
-unsigned int read_int(){
-
-
-}
+//unsigned int read_int(){
+//
+//
+//}
 
 string GetPassword(const string& prompt){
     string result;

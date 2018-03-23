@@ -1,18 +1,19 @@
 #ifndef NEW_USER_H
 #define NEW_USER_H
 #include "global.h"
-#include <string>
+#include "db_connector.h"
 #include <random>
 #include<ctime>
+#include <iostream>
+#include <map>
 class New_user
 {
-    unsigned int id, mobile_number,account_number;
-    string name, username, password, address;
-    float balance;
+    map<string, QString> user_data_map;
+
 
 public:
     New_user();
-    void ReturnNewUserInfo();
+    map<string, QString>& ReturnNewUserData();
     void GenerateIdAndAccountNo(DB_connector* connector);
     bool IsAvailable(unsigned int _id, QString param, DB_connector* connector);
     void AssignCredentials();

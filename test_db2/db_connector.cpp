@@ -3,6 +3,8 @@
 #include <QDebug>
 DB_connector::DB_connector()
 {
+
+
 }
 
 bool DB_connector::open(){
@@ -27,29 +29,35 @@ bool DB_connector::close(){
      return result;
 }
 
-QString DB_connector::SingleSelectQuery(const QString& _query){
 
+
+QString DB_connector::SingleSelectQuery(const QString& _query){
     query = QSqlQuery(db);
     QString result = "";
-    if(db.open())
-    {
-        query.exec(_query);
-        if(!query.size()) {
-           // qDebug() << "No such user exists\n";
-        }
-        else {
+    query.next();
+    query.exec(_query);
+        if(query.size() == 1) {
             query.first();
             result = query.value(0).toString();
-            qDebug() << "querie result: " << result << endl;
         }
-        QString wynik = query.lastQuery();
-        qDebug("%s", qUtf8Printable(wynik));
-    }
-    else{
-        qDebug() << "Database not open\n";
-    }
+        else {
+         qDebug() << "querie size: ";
+         qDebug("%s", qUtf8Printable(QString::number(query.size()) + "\n"));
+        }
+        qDebug("%s", qUtf8Printable("SingleSelectQuery return:: " + result));
     return result;
+}
+
+bool DB_connector::QueryExecute(const QString& _query){
 
 
+    query = QSqlQuery(db);
+    if( query.exec(_query))
+        qDebug()<< "OK";
+    return true;
+    //return query.exec(_query);
 
 }
+
+
+
